@@ -1,27 +1,65 @@
 {
   "compilerOptions": {
+    // 어떤 버전의 JavaScript로 트랜스파일할지 설정 (여기선 ES2017)
     "target": "ES2017",
+
+    // 사용할 라이브러리 정의 (DOM, 최신 ECMAScript 기능 등)
     "lib": ["dom", "dom.iterable", "esnext"],
+
+    // .js 파일도 컴파일 대상으로 포함할지 여부
     "allowJs": true,
+
+    // 외부 라이브러리 타입 체크 건너뛰기 (빌드 속도 향상)
     "skipLibCheck": true,
+
+    // 모든 엄격한 타입 검사 옵션 활성화 (타입 안정성 향상)
     "strict": true,
+
+    // 실제 JavaScript 파일을 출력하지 않음 (Next.js가 빌드 처리함)
     "noEmit": true,
+
+    // CommonJS 모듈도 ES6 방식으로 import 가능하게 함
     "esModuleInterop": true,
+
+    // 모듈 시스템을 ESNext로 설정 (최신 모듈 방식 사용)
     "module": "esnext",
+
+    // 모듈 해석 방식 지정 (Next.js나 최신 번들러에 적합한 방식)
     "moduleResolution": "bundler",
+
+    // JSON 파일도 import 가능하게 함
     "resolveJsonModule": true,
+
+    // 파일들을 독립적인 모듈로 처리 (Next.js 요구사항)
     "isolatedModules": true,
+
+    // JSX를 그대로 보존 (Next.js가 처리함)
     "jsx": "preserve",
+
+    // 컴파일 속도 향상을 위한 캐시 사용
     "incremental": true,
+
+    // Next.js 전용 플러그인 활성화
     "plugins": [
       {
         "name": "next"
       }
     ],
+
+    // 경로 별칭 설정 (@/ 로 src/ 내부 경로 참조 가능)
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+
+  // 컴파일 대상에 포함할 파일 지정
+  "include": [
+    "next-env.d.ts",      // Next.js에서 자동 생성되는 타입 정의
+    "**/*.ts",            // 모든 .ts 파일 포함
+    "**/*.tsx",           // 모든 .tsx 파일 포함 (React 컴포넌트 등)
+    ".next/types/**/*.ts" // Next.js 빌드시 생성되는 타입 포함
+  ],
+
+  // 제외할 폴더 (node_modules는 무시)
   "exclude": ["node_modules"]
 }
