@@ -19,9 +19,9 @@ export default function Blog() {
         <div>
             <h2>Blog page!</h2>
             <ul>
-               {generateStaticParams().map((post) => (
-                    <li key={post.id}>
-                        <Link href={`/blog/${post.id}`}>{post.id}</Link>
+               {generateStaticParams().map((item) => (
+                    <li key={item.id}>
+                        <Link href={`/blog/${item.id}`}>{item.id}</Link>
                     </li>
                 ))}
             </ul>
