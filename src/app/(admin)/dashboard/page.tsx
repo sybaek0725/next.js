@@ -1,5 +1,11 @@
+import Counter from '@/components/counter';
+
 export default function Dashboard() {
     return (
-        <h2>Dashboard Page!</h2>
+        <div>
+            <h2>Dashboard Page!</h2>
+            <Counter />
+        </div>
+        
     )
 }
